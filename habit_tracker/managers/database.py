@@ -33,4 +33,4 @@ class DatabaseManager:
 
 
 DB=DatabaseManager()
-print(DB.query_database('select * from test1;'))
+print(DB.query_database('select * from users;'))

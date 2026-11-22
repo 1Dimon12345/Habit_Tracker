@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+
+    <h1>Моя первая страница</h1>
+    
+    <!-- Выводим переменную из Python -->
+    <p>{{ my_text }}</p>
+
+    <hr> <!-- Просто линия для красоты -->
+
+    <h2>Регистрация</h2>
+    
+    <!-- Форма отправляет данные методом POST на эту же страницу -->
+    <form method="POST">
+        {% csrf_token %}
+        
+        <p>
+            <label>Логин:</label><br>
+            <input type="text" name="username" required>
+        </p>
+        
+        <p>
+            <label>Пароль:</label><br>
+            <input type="password" name="password" required>
+        </p>
+        
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+
+</body>
+</html>
