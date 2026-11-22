@@ -1,0 +1,17 @@
+CREATE TABLE users (
+    user_id  SERIAL PRIMARY KEY,
+    login    VARCHAR(50) UNIQUE NOT NULL,
+    pwd      VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE habits (
+    habit_id   SERIAL PRIMARY KEY,
+    name_habit VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE user_habit (
+    user_id  INT NOT NULL,
+    habit_id INT NOT NULL,
+    FOREIGN KEY (user_id)  REFERENCES users(user_id)  ON DELETE CASCADE,
+    FOREIGN KEY (habit_id) REFERENCES habits(habit_id) ON DELETE CASCADE
+);
